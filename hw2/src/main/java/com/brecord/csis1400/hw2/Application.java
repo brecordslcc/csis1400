@@ -8,13 +8,11 @@ public class Application {
     public static void main(String[] args) throws IOException {
         final StringBuilder sb = new StringBuilder();
         final List<String> titles = Arrays.asList("number", "square", "cube");
-        final byte columns = 3,
-                columnWidth = 8;
 
-        for (int i = -1; i <= 10; i++) {
+        for (byte i = -1, columns = 3, columnWidth = 8; i <= 10; i++) {
             sb.append("\n");
             for (byte j = 0; j < columns; j++) {
-                final String val = String.valueOf((int) Math.pow(i, j + 1));
+                final String val = String.valueOf((short) Math.pow(i, j + 1));
                 for (byte k = 0; k < columnWidth; k++) {
                     if (i == -1)
                         sb.append(titles.get(j).length() <= k ? " " : titles.get(j).charAt(k));
